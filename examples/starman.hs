@@ -19,10 +19,6 @@ mkguess word display n =
      let (correct, display') = check word display (q!!0)
      let n' = if correct then n else n-1
      turn word display' n'
-     
-
-
-
 
 starman :: String -> Int -> IO()
 starman word n = turn word['-' | x<- word] n
