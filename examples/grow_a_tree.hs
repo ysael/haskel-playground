@@ -24,3 +24,11 @@ addNewMax Leaf = Node 0 Leaf Leaf -- input tree with no nodes
 addNewMax (Node x t1 Leaf) = Node x t1 (Node (x+1) Leaf Leaf) -- this is the rightmost Node
 addNewMax (Node x t1 t2) = Node x t1 (addNewMax t2)  -- intermediate node, go down right subtree
 
+
+allLeafs :: Tree -> [Tree]
+allLeafs Leaf = [Leaf]
+allLeafs (Node sum leftSubtree rightSubtree) = 
+    (allLeafs leftSubtree) ++ (allLeafs rightSubtree)
+
+-- TODO: Can you write functions to insert a 
+-- value into a Tree in order, or to convert from a Tree into a list?
